@@ -11,8 +11,8 @@
  *
  * @author Luan
  */
-require_once 'Controlador.php';
-class Lutador implements Controlador {
+//require_once 'Controlador.php';
+class Lutador /* implements Controlador */ {
 //    attrs
     private $nome;
     private $nacionalidade;
@@ -26,31 +26,31 @@ class Lutador implements Controlador {
 
 //    metodos    
 //    getters e setters
-    private function getNome() {
+    public function getNome() {
         return $this->nome;
     }
-    private function getNacionalidade() {
+    public function getNacionalidade() {
         return $this->nacionalidade;
     }
-    private function getIdade() {
+    public function getIdade() {
         return $this->idade;
     }
-    private function getAltura() {
+    public function getAltura() {
         return $this->altura;
     }
-    private function getPeso() {
+    public function getPeso() {
         return $this->peso;
     }
-    private function getCategoria() {
+    public function getCategoria() {
         return $this->categoria;
     }
-    private function getVitorias() {
+    public function getVitorias() {
         return $this->vitorias;
     }
-    private function getDerrotas() {
+    public function getDerrotas() {
         return $this->derrotas;
     }
-    private function getEmpates() {
+    public function getEmpates() {
         return $this->empates;
     }
     private function setNome($nome) {
@@ -115,13 +115,13 @@ class Lutador implements Controlador {
     }
 
     public function apresentar() {
-        echo "<b>CHEGOU A HORAAAAAA</b> este é o ".
+        echo "<p><b>CHEGOU A HORAAAAAA</b> este é o ".
             "Lutador: ".$this->getNome().
             " com Origem: ".$this->getNacionalidade().
             ", tem ".$this->getIdade()." anos".
             " e ".$this->getAltura()."m de altura.".
             " Pesando: ".$this->getPeso()."kg.".
-            "<br>Ganhou: ".$this->getVitorias().", Perdeu: ".$this->getDerrotas()." e Empatou: ".$this->getEmpates()."<br>";
+            "<br>Ganhou: ".$this->getVitorias().", Perdeu: ".$this->getDerrotas()." e Empatou: ".$this->getEmpates()."</p>";
     }
 
     public function empatarLuta() {
@@ -137,7 +137,7 @@ class Lutador implements Controlador {
     }
 
     public function status() {
-        echo $this->getNome()." é um peso ".$this->getCategoria().", ganhou ".$this->getVitorias()." lutas e perdeu ".$this->getDerrotas();
+        echo "<br>".$this->getNome()." é um peso ".$this->getCategoria().", ganhou ".$this->getVitorias()." lutas, perdeu ".$this->getDerrotas()." e empatou: ".$this->getEmpates();
     }
 
 }
