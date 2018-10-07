@@ -77,7 +77,7 @@ class Book implements Publication {
     }
     public function nextPage() {
         if($this->getOpen()){
-          if($this->getActualPage() <= $this->getTotPages()){
+          if($this->getActualPage() < $this->getTotPages()){
                 $this->setActualPage($this->getActualPage()+1);
             }else{
                 echo '<span style="color: red;">'.$this->getReader().' Impossível ir para a próxima página... <br>O livro acabou e será fechado!</span>';

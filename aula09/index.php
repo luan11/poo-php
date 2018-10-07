@@ -21,22 +21,18 @@ and open the template in the editor.
             
             $arr_book = [];
             for($i = 0; $i <= (count($arr_peoples)-1); $i++){
-                array_push($arr_book, new Book('Casa de Sol', 'Jorge Braga', 500, 0, true, $arr_peoples[$i]));
+                array_push($arr_book, new Book('Casa de Sol', 'Jorge Braga', rand(80,220), 0, true, $arr_peoples[$i]));
             }
-            echo '<pre>';
-            print_r($arr_book);
-            echo '</pre>';
-            
-            
-            $arr_book[0]->previewOfRead(499);
-            $arr_book[1]->closeBook();
-            $arr_book[2]->closeBook();
             
             for($i = 0; $i <= (count($arr_peoples)-1); $i++){
                 echo '<div style="border-bottom: 1px solid #000;">';
                 $arr_book[$i]->bookDetails();
                 echo '</div>';
             }
+                        
+            echo '<pre>';
+            print_r($arr_book);
+            echo '</pre>';
         ?>
     </body>
 </html>
